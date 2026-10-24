@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartStock – Inventory & Sales Management</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<!-- ============ LOGIN / FIRST-TIME SETUP ============ -->
+<div id="auth" class="auth" hidden>
+  <section class="auth-hero">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div><div class="brand-name">SmartStock</div><div class="brand-sub">Inventory & sales management</div></div>
+    </div>
+    <h2>Know your stock.<br>Grow your business.</h2>
+    <ul>
+      <li>Track products, stock levels and suppliers</li>
+      <li>Record sales and print receipts</li>
+      <li>See profit, best sellers and low-stock alerts at a glance</li>
+    </ul>
+  </section>
+
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div id="authMsg" class="auth-msg" hidden></div>
+
+      <div id="loginBox">
+        <h2>Welcome back</h2>
+        <p class="auth-sub">Sign in with the username and password given to you by the administrator.</p>
+        <form id="loginForm" autocomplete="on">
+          <div class="field"><label for="lu">Username</label><input id="lu" name="username" required autocomplete="username" autocapitalize="none"></div>
+          <div class="field"><label for="lp">Password</label><input id="lp" name="password" type="password" required autocomplete="current-password"></div>
+          <label class="chk"><input type="checkbox" id="showPw"> Show password</label>
+          <button class="btn primary block" id="loginBtn">Sign in</button>
+        </form>
+        <p class="hint" style="margin-top:16px">No access yet? Contact the administrator to get your username and password.</p>
+      </div>
+    </div>
+    <footer class="auth-foot">© <span class="yr"></span> SmartStock · Designed &amp; developed by <b class="dev-name"></b></footer>
+  </section>
+</div>
+
+<!-- ============ APPLICATION ============ -->
+<div class="app" id="appRoot" hidden>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">S</div>
+      <div>
+        <div class="brand-name">SmartStock</div>
+        <div class="brand-sub" id="bizName">My Business</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#dashboard" data-view="dashboard"><span class="ic">▦</span> Dashboard</a>
+      <a href="#products" data-view="products"><span class="ic">▤</span> Products</a>
+      <a href="#sales" data-view="sales"><span class="ic">$</span> Sales</a>
+      <a href="#movements" data-view="movements"><span class="ic">⇅</span> Stock Movements</a>
+      <a href="#reports" data-view="reports"><span class="ic">▥</span> Reports</a>
+      <a href="#settings" data-view="settings"><span class="ic">⚙</span> Settings</a>
+      <a href="#admin" data-view="admin" id="navAdmin" style="display:none"><span class="ic">♛</span> Admin Panel</a>
+    </nav>
+    <div class="side-foot">
+      <div class="alert-pill" id="sideAlert"></div>
+      <small>SmartStock v2.0</small>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <h1 id="pageTitle">Dashboard</h1>
+      <div class="top-actions">
+        <span class="date-chip" id="todayChip"></span>
+        <button class="btn primary" id="quickSale">+ New Sale</button>
+        <div class="user-chip"><span class="avatar" id="userAvatar">U</span><span class="uname"><b id="userName"></b><small id="userRole"></small></span></div>
+        <button class="btn" id="logoutBtn">Log out</button>
+      </div>
+    </header>
+    <main id="view" class="view"></main>
+    <footer class="app-footer">© <span class="yr"></span> SmartStock · Designed &amp; developed by <b class="dev-name"></b></footer>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <form id="modalForm" autocomplete="off">
+      <div class="modal-head">
+        <h3 id="modalTitle"></h3>
+        <button type="button" class="icon-btn" id="modalClose" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFooter">
+        <button type="button" class="btn" id="modalCancel">Cancel</button>
+        <button type="submit" class="btn primary" id="modalSubmit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toasts"></div>
+<script src="accounts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

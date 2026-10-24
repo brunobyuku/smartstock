@@ -1,0 +1,53 @@
+/* Additions for login, admin panel and footer */
+[hidden]{display:none!important}
+
+.auth{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;background:var(--bg)}
+.auth-hero{background:linear-gradient(145deg,#111a2e 0%,#2b2a8f 70%,#4f46e5 100%);color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.auth-hero .brand{border:0;padding:0}
+.auth-hero .brand-sub{color:#c9cdf5}
+.auth-hero h2{font-size:38px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+.auth-hero ul{list-style:none;display:flex;flex-direction:column;gap:12px;color:#d6d9fb;font-size:15.5px}
+.auth-hero li::before{content:"✔";margin-right:10px;color:#8ff0b3}
+.auth-panel{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:30px 20px;gap:22px}
+.auth-card{background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:34px;width:100%;max-width:420px}
+.auth-card h2{font-size:23px;margin-bottom:6px}
+.auth-sub{color:var(--muted);margin-bottom:22px}
+.auth-msg{background:var(--red-l);color:var(--red);padding:10px 14px;border-radius:10px;font-weight:600;margin-bottom:16px;font-size:13.5px}
+.auth-foot,.app-footer{color:var(--muted);font-size:12.5px;text-align:center}
+.auth-foot b,.app-footer b{color:var(--ink)}
+.app-footer{padding:18px 28px 26px;border-top:1px solid var(--line);margin-top:10px}
+.btn.block{width:100%;justify-content:center;padding:12px;margin-top:6px}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.chk{display:flex;align-items:center;gap:8px;font-weight:500;margin-bottom:6px;cursor:pointer}
+.chk input{width:auto}
+
+.user-chip{display:flex;align-items:center;gap:10px}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--brand-l);color:var(--brand);display:grid;place-items:center;font-weight:700}
+.uname{display:flex;flex-direction:column;line-height:1.2}
+.uname small{color:var(--muted);text-transform:capitalize}
+
+.cred{background:var(--bg);border-radius:12px;padding:14px 16px;margin:12px 0}
+.cred div{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.cred code{font-family:Consolas,monospace;font-size:15px;font-weight:700;user-select:all}
+.pw-row{display:flex;gap:8px}
+.pw-row .btn{white-space:nowrap}
+.meter{height:8px;background:var(--bg);border-radius:8px;overflow:hidden;margin-top:8px}
+.meter>i{display:block;height:100%;background:var(--brand)}
+
+@media (max-width:900px){
+  .auth{grid-template-columns:1fr}
+  .auth-hero{padding:28px 24px;gap:14px}
+  .auth-hero h2{font-size:26px}
+  .auth-hero ul{display:none}
+}
+@media (max-width:860px){
+  .uname{display:none}
+  .app-footer{padding:16px 14px 24px}
+  #quickSale{display:none}
+}
+
+/* Large RWF amounts must fit inside the cards */
+.kpi{min-width:0}
+.kpi>div:last-child{min-width:0}
+.kpi .val{font-size:20px;white-space:nowrap}
+.kpi .lbl{font-size:12px}
